@@ -1,0 +1,53 @@
+version: "3.8"
+services:
+  buildchain:
+    image: node:17
+    container_name: buildchain
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./buildchain:/app
+    command: npm run dev 
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web
+    env_file: cms/.env
+    depends_on:
+      - "mysql"
+      - "redis"
+    ports:
+      - 8080:8080
+    volumes:
+      - ./cms:/app
+  console:
+    image: craftcms/cli:8.0
+    container_name: console
+    env_file: cms/.env
+    depends_on:
+      - "mysql"
+      - "redis"
+    volumes:
+      - ./cms:/app
+    command: php craft queue/listen
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+  redis:
+    image: redis:5-alpine
+    container_name: redis
+    ports:
+      - 6379:6379
+volumes:
+  db_data:

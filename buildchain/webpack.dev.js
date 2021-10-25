@@ -30,10 +30,6 @@ module.exports = {
     client: {
         progress: false,
     },
-    dev: {
-        publicPath: '/',
-    },
-    firewall: false,
     headers: {
         'Access-Control-Allow-Origin': '*'
     },
@@ -41,7 +37,6 @@ module.exports = {
     hot: true,
     https: false,
     port: 3000,
-    public: 'http://0.0.0.0:3000',
     static: {
       directory: path.resolve(__dirname, '../cms/templates/'),
       publicPath: '/',
@@ -100,7 +95,7 @@ module.exports = {
                   debug: false,
                   useBuiltIns: 'usage',
                   targets: {
-                    browsers: pkg.browserslist.modernBrowsers,
+                    browsers: pkg.browserslist,
                   },
                 }
               ],

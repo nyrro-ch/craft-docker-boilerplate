@@ -1,0 +1,27 @@
+dateModified: 1635191206
+email:
+  fromEmail: test@test.com
+  fromName: test
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    7b536b58-b666-433c-b337-d57dbd437d6e: test # test
+    07230260-8a44-45cc-b1d8-635f859f81f1: Common # Common
+    ef6d587d-8d7c-45b3-bf7c-56f6c8275aea: test # test
+plugins:
+  twigpack:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: solo
+  live: true
+  name: test
+  schemaVersion: 3.7.8
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

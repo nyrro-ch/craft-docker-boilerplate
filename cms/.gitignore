@@ -1,0 +1,5 @@
+/.env
+/vendor/
+/web/images/
+/web/uploads/
+.DS_Store

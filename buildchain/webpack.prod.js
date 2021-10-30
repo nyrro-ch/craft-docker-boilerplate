@@ -39,7 +39,7 @@ module.exports = {
   output: {
     filename: path.join('./js', '[name].[contenthash].js'),
     path: path.resolve(__dirname, '../cms/web/dist'),
-    publicPath: 'https://stage.recap-cystitis.com/dist/',
+    publicPath: 'http://localhost:8080/dist/',
   },
   optimization: {
     minimize: true,

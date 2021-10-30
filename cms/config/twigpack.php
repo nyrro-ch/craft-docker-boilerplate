@@ -24,8 +24,8 @@ return [
         ],
         // webpack-dev-server config
         'devServer' => [
-            'manifestPath' => 'http://host.docker.internal:3000/',
-            'publicPath' => 'http://host.docker.internal:3000/',
+            'manifestPath' => 'http://localhost:3000/',
+            'publicPath' => 'http://localhost:3000/',
         ],
         // Bundle to use with the webpack-dev-server
         'devServerBuildType' => 'modern',
